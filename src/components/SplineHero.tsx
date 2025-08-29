@@ -21,7 +21,7 @@ export default function SplineHero({ isMobile = false }: SplineHeroProps) {
           height: '100%',
           minWidth: '100%',
           minHeight: '100%',
-          pointerEvents: 'none' // Prevent interaction issues with content above
+          pointerEvents: 'none'
         }}
       />
     </div>

@@ -19,7 +19,7 @@ export default function SplineFigure({ isMobile = false }: SplineFigureProps) {
           height: '100%',
           minWidth: '100%',
           minHeight: '100%',
-          pointerEvents: 'none' // Prevent interaction with cards above
+          pointerEvents: 'none'
         }}
       />
     </div>
