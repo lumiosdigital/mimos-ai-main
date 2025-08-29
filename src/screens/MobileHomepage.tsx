@@ -8,12 +8,12 @@ import Link from "next/link";
 import Card from "@/components/Card";
 import MobileNavbar from "@/components/MobileNavbar";
 import MobileFooter from "@/components/MobileFooter";
+import SplineHero from "@/components/SplineHero";
+import SplineFigure from "@/components/SplineFigure";
 
-import Sphere from "@/assets/sphere.png";
 import YCombinator from "@/components/icons/YCombinator";
 import MimosLogo from "@/components/icons/MimosLogo";
 import ComputerHand from "@/assets/computer_hand.png";
-import Figure from "@/assets/figure.png";
 import Arrow from "@/components/icons/Arrow";
 import Form from "@/components/Form";
 
@@ -47,6 +47,7 @@ export default function MobileHomepage() {
           height: "100dvh",
         }}
       >
+        {/* Background gradient blur - lowest layer */}
         <div
           className="absolute inset-0 blur-[0px] z-0 w-full h-full"
           style={{
@@ -55,13 +56,13 @@ export default function MobileHomepage() {
           }}
           aria-hidden="true"
         />
-        <Image
-          src={Sphere}
-          alt=""
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 min-w-[530px]"
-        />
+        
+        {/* Spline animation - behind content but above gradient */}
+        <SplineHero isMobile={true} />
+        
+        {/* Main content - above animation */}
         <div
-          className="relative z-10 flex flex-col items-center max-w-[700px] w-full px-4"
+          className="relative z-20 flex flex-col items-center max-w-[700px] w-full px-4"
           style={{
             marginTop: "clamp(11rem, 25vh, 20rem)",
           }}
@@ -107,7 +108,11 @@ export default function MobileHomepage() {
             <YCombinator />
           </div>
         </div>
-        <MimosLogo />
+        
+        {/* Mimos logo - highest layer, styled like footer */}
+        <div className="flex justify-center items-center mt-[55px] relative z-30">
+          <MimosLogo width={300} height={73} />
+        </div>
       </div>
       <MediaQuery width={`(max-width: 769px)`}>
         <div className="h-10" />
@@ -135,7 +140,7 @@ export default function MobileHomepage() {
             }}
           />
         </div>
-        <div className="items-center flex flex-col flex-1 px-4">
+        <div className="items-center flex flex-col flex-1 px-4 relative z-10">
           <h2 className="font-bold text-[1.75rem] text-white mt-[60px]">
             Why Mimos?
           </h2>
@@ -153,13 +158,13 @@ export default function MobileHomepage() {
             </Card>
           </div>
         </div>
-        <Image src={Figure} alt="" className="w-full z-10" />
+        <SplineFigure isMobile={true} />
       </div>
       <div className="flex flex-col rounded-t-[40px] w-full px-4 -mt-10 z-20 bg-[#f6f6f6] justify-center items-center">
         <h2 className="font-bold text-[1.75rem] mt-[60px]">What We Do</h2>
         <div className="flex flex-col items-center justify-center mb-[100px]">
           <h3 className="font-bold text-xl text-center mt-8">
-            We optimize your firm’s digital presence for the AI era.
+            We optimize your firm&#39;s digital presence for the AI era.
           </h3>
           <p className="text-[#626262] text-lg text-center mt-4">
             From metadata and schema changes to broader content strategy we

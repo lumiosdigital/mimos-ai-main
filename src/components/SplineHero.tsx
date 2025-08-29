@@ -8,10 +8,10 @@ interface SplineHeroProps {
 export default function SplineHero({ isMobile = false }: SplineHeroProps) {
   return (
     <div 
-      className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 ${
+      className={`absolute inset-0 z-0 w-full h-full ${
         isMobile 
-          ? "min-w-[530px] min-h-[530px]" 
-          : "mt-[3.125rem] scale-[0.96] max-h-[46rem] max-w-[46rem] w-[46rem] h-[46rem]"
+          ? "overflow-hidden" 
+          : "overflow-hidden"
       }`}
     >
       <Spline
@@ -19,7 +19,9 @@ export default function SplineHero({ isMobile = false }: SplineHeroProps) {
         style={{ 
           width: '100%', 
           height: '100%',
-          pointerEvents: 'auto'
+          minWidth: '100%',
+          minHeight: '100%',
+          pointerEvents: 'none' // Prevent interaction issues with content above
         }}
       />
     </div>

@@ -27,6 +27,7 @@ export default function Homepage() {
           height: "100dvh",
         }}
       >
+        {/* Background gradient blur - lowest layer */}
         <div
           className="absolute inset-0 blur-[360px] z-0 w-full h-full"
           style={{
@@ -35,9 +36,13 @@ export default function Homepage() {
           }}
           aria-hidden="true"
         />
+        
+        {/* Spline animation - behind content but above gradient */}
         <SplineHero />
+        
+        {/* Main content - above animation */}
         <div
-          className="relative z-10 flex flex-col items-center max-w-[700px] w-full px-4"
+          className="relative z-20 flex flex-col items-center max-w-[700px] w-full px-4"
           style={{
             marginTop: "clamp(180px, 25vh, 320px)",
           }}
@@ -85,7 +90,11 @@ export default function Homepage() {
             <YCombinator />
           </div>
         </div>
-        <MimosLogo />
+        
+        {/* Mimos logo - highest layer */}
+        <div className="relative z-30">
+          <MimosLogo />
+        </div>
       </div>
       <MediaQuery width={`(min-width: 1440px)`}>
         <div
@@ -129,7 +138,7 @@ export default function Homepage() {
             }}
           />
         </div>
-        <div className="items-center flex flex-col flex-1">
+        <div className="items-center flex flex-col flex-1 relative z-10">
           <h2 className="font-bold text-[44px] text-white mt-[120px]">
             Why Mimos?
           </h2>

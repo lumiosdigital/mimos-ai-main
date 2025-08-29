@@ -8,15 +8,18 @@ interface SplineFigureProps {
 export default function SplineFigure({ isMobile = false }: SplineFigureProps) {
   return (
     <div 
-      className={`w-full z-10 ${isMobile ? "" : "-mb-[50px]"}`}
-      style={{ height: '400px' }}
+      className={`absolute inset-0 z-0 w-full h-full ${
+        isMobile ? "overflow-hidden" : "overflow-hidden"
+      }`}
     >
       <Spline
         scene="https://prod.spline.design/1tqv3GuZEqIo4eeA/scene.splinecode"
         style={{ 
           width: '100%', 
           height: '100%',
-          pointerEvents: 'auto'
+          minWidth: '100%',
+          minHeight: '100%',
+          pointerEvents: 'none' // Prevent interaction with cards above
         }}
       />
     </div>
