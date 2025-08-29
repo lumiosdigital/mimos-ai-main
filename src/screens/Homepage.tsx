@@ -8,13 +8,12 @@ import Step from "@/components/Step";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Card from "@/components/Card";
-
-import Sphere from "@/assets/sphere.png";
-import YCombinator from "@/assets/y_combinator_logo.svg";
-import MimosLogo from "@/assets/full_logo_black.svg";
+import SplineHero from "@/components/SplineHero";
+import SplineFigure from "@/components/SplineFigure";
+import YCombinator from "@/components/icons/YCombinator";
+import MimosLogo from "@/components/icons/MimosLogo";
 import ComputerHand from "@/assets/computer_hand.png";
-import Figure from "@/assets/figure.png";
-import Arrow from "@/assets/arrow.svg";
+import Arrow from "@/components/icons/Arrow";
 import Form from "@/components/Form";
 
 export default function Homepage() {
@@ -36,11 +35,7 @@ export default function Homepage() {
           }}
           aria-hidden="true"
         />
-        <Image
-          src={Sphere}
-          alt=""
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 mt-[3.125rem] scale-[0.96] max-h-[46rem] max-w-[46rem]"
-        />
+        <SplineHero />
         <div
           className="relative z-10 flex flex-col items-center max-w-[700px] w-full px-4"
           style={{
@@ -87,10 +82,10 @@ export default function Homepage() {
           </div>
           <div className="flex flex-row gap-2.5 items-center">
             <p className="font-semibold">Backed by</p>
-            <Image src={YCombinator} alt="" />
+            <YCombinator />
           </div>
         </div>
-        <Image src={MimosLogo} alt="" className="mt-5 z-20" />
+        <MimosLogo />
       </div>
       <MediaQuery width={`(min-width: 1440px)`}>
         <div
@@ -152,13 +147,13 @@ export default function Homepage() {
             </Card>
           </div>
         </div>
-        <Image src={Figure} alt="" className="w-full -mb-[50px] z-10" />
+        <SplineFigure />
       </div>
       <div className="flex flex-col rounded-t-[80px] w-full -mt-[80px] z-20 bg-[#f6f6f6] justify-center items-center">
         <h2 className="font-bold text-[44px] mt-[140px]">What We Do</h2>
         <div className="max-w-[730px] flex flex-col items-center justify-center mb-[100px]">
           <h3 className="font-bold text-[28px] mt-[60px]">
-            We optimize your firm’s digital presence for the AI era.
+            We optimize your firm&apos;s digital presence for the AI era.
           </h3>
           <p className="text-[#626262] text-lg text-center mt-5">
             From metadata and schema changes to broader content strategy we
@@ -197,7 +192,7 @@ export default function Homepage() {
               Early Access
             </Button>
             <Button variant={"secondary"} className="w-[60px] h-[60px]">
-              <Image src={Arrow} alt="" />
+              <Arrow />
             </Button>
           </div>
         </Form>

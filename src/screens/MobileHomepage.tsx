@@ -10,11 +10,11 @@ import MobileNavbar from "@/components/MobileNavbar";
 import MobileFooter from "@/components/MobileFooter";
 
 import Sphere from "@/assets/sphere.png";
-import YCombinator from "@/assets/y_combinator_logo.svg";
-import MimosLogo from "@/assets/full_logo_black.svg";
+import YCombinator from "@/components/icons/YCombinator";
+import MimosLogo from "@/components/icons/MimosLogo";
 import ComputerHand from "@/assets/computer_hand.png";
 import Figure from "@/assets/figure.png";
-import Arrow from "@/assets/arrow.svg";
+import Arrow from "@/components/icons/Arrow";
 import Form from "@/components/Form";
 
 export default function MobileHomepage() {
@@ -104,10 +104,10 @@ export default function MobileHomepage() {
           </div>
           <div className="flex flex-row gap-2.5 items-center">
             <p className="font-semibold">Backed by</p>
-            <Image src={YCombinator} alt="" />
+            <YCombinator />
           </div>
         </div>
-        <Image src={MimosLogo} alt="" className="mt-5 z-20 max-w-[90%]" />
+        <MimosLogo />
       </div>
       <MediaQuery width={`(max-width: 769px)`}>
         <div className="h-10" />
@@ -200,7 +200,7 @@ export default function MobileHomepage() {
               Early Access
             </Button>
             <Button variant={"secondary"} className="w-[44px] h-[44px]">
-              <Image src={Arrow} alt="" />
+              <Arrow />
             </Button>
           </div>
         </Form>
